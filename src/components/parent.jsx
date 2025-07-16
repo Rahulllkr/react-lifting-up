@@ -1,6 +1,6 @@
 // import React from "react";
 import Child1 from "./child1";
-// import Child2 from './child2'
+import Child2 from './child2'
 
 // const Parent = () => {
 //   const [showModel, setShowModel] = useState(false);
@@ -31,26 +31,49 @@ import Child1 from "./child1";
 
 // export default Parent;
 
-import React,{useState} from 'react'
+// import React,{useState} from 'react'
+
+// const Parent = () => {
+
+//   const [value,setValue] = useState("Default Value")
+
+//   const handleChild = (e) => {
+//     setValue(e);
+
+//   }
+
+//   return (
+//     <div style={{height:"400px",width:"600px",backgroundColor:"greenyellow",textAlign:"center"}}>
+
+//       <h1>Parent Component</h1>
+
+//       <h3>{value}</h3>
+
+//       <Child1 handleChild = {handleChild}/>
+      
+//     </div>
+//   )
+// }
+
+// export default Parent
+
+import React, { useState } from 'react'
 
 const Parent = () => {
+  const [option,setOption] = useState("")
 
-  const [value,setValue] = useState("Default Value")
-
-  const handleChild = (e) => {
-    setValue(e);
-
+  const handlechilds = (e) => {
+    setOption(e)
   }
-
   return (
     <div style={{height:"400px",width:"600px",backgroundColor:"greenyellow",textAlign:"center"}}>
 
       <h1>Parent Component</h1>
-
-      <h3>{value}</h3>
-
-      <Child1 handleChild = {handleChild}/>
       
+      <Child1 handlechilds = {handlechilds}/>
+      <Child2 handlechilds = {handlechilds}/>
+
+      <h1>You Have Clicked {option}</h1>
     </div>
   )
 }
