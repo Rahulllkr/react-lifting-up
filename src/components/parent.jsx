@@ -31,22 +31,26 @@ import Child1 from "./child1";
 
 // export default Parent;
 
-
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 
 const Parent = () => {
-    const [value,setValue] = useState("Default Value")
-    
-    const handle = (e) => {
-        setValue(e)
-    }
+
+  const [value,setValue] = useState("Default Value")
+
+  const handleChild = (e) => {
+    setValue(e);
+
+  }
+
   return (
     <div style={{height:"400px",width:"600px",backgroundColor:"greenyellow",textAlign:"center"}}>
 
-        <h1>Parent Component</h1>
-        <h3>{value}</h3>
-        <Child1 handle = {handle}/>
-        
+      <h1>Parent Component</h1>
+
+      <h3>{value}</h3>
+
+      <Child1 handleChild = {handleChild}/>
+      
     </div>
   )
 }

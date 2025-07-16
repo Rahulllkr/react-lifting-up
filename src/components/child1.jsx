@@ -37,20 +37,20 @@
 
 import React from 'react'
 
-const Child1 = ({handle}) => {
+const Child1 = ({handleChild}) => {
 
-    const handleInputValue = (event) => {
+  const handleParent = (event) => {
+    handleChild(event.target.value)
 
-        handle(event.target.value)
-
-    }
-
+  }
   return (
-    <div style={{height:"100px",width:"100%",textAlign:"center",backgroundColor:"brown"}}>
 
-        <h2>Child Component</h2>
-        <input type="text" onChange={handleInputValue} placeholder='Default Value'/>
-        
+    
+    <div style={{height:"200px",width:"100%",backgroundColor:"brown",textAlign:"center"}}>
+
+      <h2>Child Component</h2>
+      <input type="text" onChange={handleParent} placeholder='Default Value'/>
+      
     </div>
   )
 }
