@@ -1,6 +1,6 @@
 // import React from "react";
 import Child1 from "./child1";
-import Child2 from './child2'
+// import Child2 from './child2'
 
 // const Parent = () => {
 //   const [showModel, setShowModel] = useState(false);
@@ -57,23 +57,48 @@ import Child2 from './child2'
 
 // export default Parent
 
+// import React, { useState } from 'react'
+
+// const Parent = () => {
+//   const [option,setOption] = useState("")
+
+//   const handlechilds = (e) => {
+//     setOption(e)
+//   }
+//   return (
+//     <div style={{height:"400px",width:"600px",backgroundColor:"greenyellow",textAlign:"center"}}>
+
+//       <h1>Parent Component</h1>
+      
+//       <Child1 handlechilds = {handlechilds}/>
+//       <Child2 handlechilds = {handlechilds}/>
+
+//       <h1>You Have Clicked {option}</h1>
+//     </div>
+//   )
+// }
+
+// export default Parent
+
+
+
 import React, { useState } from 'react'
 
 const Parent = () => {
-  const [option,setOption] = useState("")
 
-  const handlechilds = (e) => {
-    setOption(e)
+  const [isLogin , setIsLogin] = useState(false);
+  const handleChild = () => {
+
+    setIsLogin(true);
+
   }
   return (
     <div style={{height:"400px",width:"600px",backgroundColor:"greenyellow",textAlign:"center"}}>
-
       <h1>Parent Component</h1>
-      
-      <Child1 handlechilds = {handlechilds}/>
-      <Child2 handlechilds = {handlechilds}/>
-
-      <h1>You Have Clicked {option}</h1>
+      <h2>{isLogin ? "You are Logged" : "please Enter Details"}</h2>
+      {
+        !isLogin && <Child1 handleChild = {handleChild}/>
+      }
     </div>
   )
 }

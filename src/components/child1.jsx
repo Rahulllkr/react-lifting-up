@@ -58,16 +58,48 @@
 // export default Child1
 
 
+// import React from 'react'
+
+// const Child1 = ({handlechilds}) => {
+//   const setOption = () => {
+//     handlechilds("Child 1")
+//   }
+//   return (
+//     <div style={{height:"100px",width:"100%",backgroundColor:"brown",textAlign:"center"}}>
+//       <h2>Child1 Component</h2>
+//       <button type='submit' onClick={setOption}>Click 1</button>
+//     </div>
+//   )
+// }
+
+// export default Child1
+
+
+
 import React from 'react'
 
-const Child1 = ({handlechilds}) => {
-  const setOption = () => {
-    handlechilds("Child 1")
+const Child1 = ({handleChild}) => {
+
+  const handleParent = () => {
+    handleChild();
   }
   return (
-    <div style={{height:"100px",width:"100%",backgroundColor:"brown",textAlign:"center"}}>
-      <h2>Child1 Component</h2>
-      <button type='submit' onClick={setOption}>Click 1</button>
+    <div style={{height:"300px",width:"100%",backgroundColor:"brown",textAlign:"center"}}>
+
+      <form onSubmit={handleParent}>
+        <div>
+        <label htmlFor="">Username :</label>
+        <input type="email"  required/>
+        </div>
+        <div>
+        <label htmlFor="">Password :</label>
+        <input type="password"  required/>
+        </div>
+        <button type='submit'>Submit</button>
+      </form>
+
+
+      
     </div>
   )
 }
